@@ -127,7 +127,7 @@
           rgba(248, 249, 255, 0.95)
         );
         backdrop-filter: blur(10px);
-        padding: 8rem 0 4rem;
+        padding: 4rem 0 0 0;
         box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
         margin-top: 0;
         position: relative;
@@ -159,7 +159,6 @@
       }
 
       .hero-content {
-        flex: 1;
         text-align: left;
       }
 
@@ -482,17 +481,6 @@
         padding: 2rem 0;
       }
 
-      @media (prefers-color-scheme: dark) {
-        html,
-        body,
-        *,
-        *::before,
-        *::after {
-          background: white !important;
-          color: black !important;
-          border-color: black !important;
-        }
-      }
       @media (max-width: 768px) {
         .nav-links {
           display: none;
@@ -524,6 +512,10 @@
         }
       }
       @media (max-width: 1280px) {
+        header {
+            padding-bottom: 2.5rem;
+        }
+
         .hero-content {
           text-align: center;
         }
@@ -616,7 +608,7 @@
 
         <section class="section">
           <h2 class="section-title">
-            Najčešći problemi sa kojima vam mogu pomoći 🔧
+            Najčešći problemi sa kojima vam mogu pomoći
           </h2>
           <div class="problems-grid">
             <div class="problem-card">
