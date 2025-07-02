@@ -13,7 +13,7 @@
       }
 
       body {
-        font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+        font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
         line-height: 1.6;
         color: #333;
         background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
@@ -121,11 +121,7 @@
       }
 
       header {
-        background: linear-gradient(
-          135deg,
-          rgba(255, 255, 255, 0.95),
-          rgba(248, 249, 255, 0.95)
-        );
+        background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(248, 249, 255, 0.95));
         backdrop-filter: blur(10px);
         padding: 4rem 0 0 0;
         box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
@@ -135,17 +131,13 @@
       }
 
       header::before {
-        content: "";
+        content: '';
         position: absolute;
         top: 0;
         left: 0;
         right: 0;
         bottom: 0;
-        background: linear-gradient(
-          135deg,
-          rgba(102, 126, 234, 0.05),
-          rgba(118, 75, 162, 0.05)
-        );
+        background: linear-gradient(135deg, rgba(102, 126, 234, 0.05), rgba(118, 75, 162, 0.05));
         z-index: -1;
       }
 
@@ -214,18 +206,13 @@
       }
 
       .cta-button::before {
-        content: "";
+        content: '';
         position: absolute;
         top: 0;
         left: -100%;
         width: 100%;
         height: 100%;
-        background: linear-gradient(
-          90deg,
-          transparent,
-          rgba(255, 255, 255, 0.2),
-          transparent
-        );
+        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
         transition: left 0.5s;
       }
 
@@ -262,7 +249,7 @@
       }
 
       .section-title::after {
-        content: "";
+        content: '';
         position: absolute;
         bottom: -10px;
         left: 50%;
@@ -286,6 +273,220 @@
         color: #5a6c7d;
         text-align: center;
         line-height: 1.8;
+        p {
+          margin-bottom: 1rem;
+        }
+      }
+
+      .target-clients-section {
+        background: linear-gradient(135deg, #f8f9ff, #e8ecff);
+        padding: 3.5rem 2rem;
+        border-radius: 25px;
+        margin: 0 auto 4rem auto;
+        max-width: 1400px;
+        width: 100%;
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .target-clients-section::before {
+        content: '';
+        position: absolute;
+        top: -30%;
+        left: -30%;
+        width: 60%;
+        height: 60%;
+        background: radial-gradient(circle, rgba(255, 99, 132, 0.08) 0%, transparent 50%);
+        animation: pulse 8s ease-in-out infinite;
+      }
+
+      .target-clients-section::after {
+        content: '';
+        position: absolute;
+        bottom: -30%;
+        right: -30%;
+        width: 60%;
+        height: 60%;
+        background: radial-gradient(circle, rgba(255, 159, 64, 0.08) 0%, transparent 50%);
+        animation: pulse 8s ease-in-out infinite reverse;
+      }
+
+      .target-clients-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 2.5rem;
+        position: relative;
+        z-index: 2;
+        justify-items: center;
+      }
+
+      .target-client-card {
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(15px);
+        padding: 2.8rem 2.2rem;
+        border-radius: 20px;
+        text-align: center;
+        box-shadow: 0 10px 30px rgba(99, 141, 255, 0.15);
+        border: 2px solid rgba(99, 135, 255, 0.1);
+        transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        position: relative;
+        overflow: hidden;
+        width: 100%;
+        max-width: 380px;
+      }
+
+      .target-client-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(99, 172, 255, 0.08), transparent);
+        transition: left 0.7s;
+      }
+
+      .target-client-card:hover::before {
+        left: 100%;
+      }
+
+      .target-client-card:hover {
+        transform: translateY(-15px) scale(1.03);
+        box-shadow: 0 25px 50px rgba(99, 154, 255, 0.25);
+        border-color: rgba(99, 128, 255, 0.3);
+      }
+
+      .target-client-icon {
+        font-size: 2.5rem;
+        margin-bottom: 1.8rem;
+        display: block;
+        animation: bounce 2s ease-in-out infinite;
+      }
+
+      .target-client-card h3 {
+        color: #2c3e50;
+        margin-bottom: 1rem;
+        font-size: 1.5rem;
+        font-weight: 700;
+        line-height: 1.4;
+      }
+
+      .target-client-card p {
+        color: #5a6c7d;
+        font-size: 1.1rem;
+        line-height: 1.7;
+        font-style: italic;
+        font-weight: 500;
+      }
+
+      /* Tablet breakpoint */
+      @media (max-width: 768px) {
+        .target-clients-section {
+          padding: 2.5rem 1.5rem;
+          border-radius: 20px;
+          margin-bottom: 3rem;
+        }
+
+        .target-clients-grid {
+          grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+          gap: 2rem;
+        }
+
+        .target-client-card {
+          padding: 2.2rem 1.8rem;
+          border-radius: 15px;
+        }
+
+        .target-client-icon {
+          font-size: 2.2rem;
+          margin-bottom: 1.5rem;
+        }
+
+        .target-client-card h3 {
+          font-size: 1.3rem;
+        }
+
+        .target-client-card p {
+          font-size: 1rem;
+        }
+      }
+
+      /* Mobile breakpoint */
+      @media (max-width: 480px) {
+        .target-clients-section {
+          padding: 2rem 1rem;
+          border-radius: 15px;
+          margin-bottom: 2.5rem;
+        }
+
+        .target-clients-grid {
+          grid-template-columns: 1fr;
+          gap: 1.5rem;
+        }
+
+        .target-client-card {
+          padding: 2rem 1.5rem;
+          border-radius: 12px;
+          max-width: 100%;
+        }
+
+        .target-client-card:hover {
+          transform: translateY(-8px) scale(1.02);
+        }
+
+        .target-client-icon {
+          font-size: 2rem;
+          margin-bottom: 1.2rem;
+        }
+
+        .target-client-card h3 {
+          font-size: 1.2rem;
+          margin-bottom: 0.8rem;
+        }
+
+        .target-client-card p {
+          font-size: 0.95rem;
+          line-height: 1.6;
+        }
+      }
+
+      @media (min-width: 1200px) {
+        .target-clients-section {
+          padding: 4rem 3rem;
+        }
+
+        .target-clients-grid {
+          gap: 3rem;
+        }
+      }
+
+      @keyframes pulse {
+        0%,
+        100% {
+          opacity: 0.6;
+          transform: scale(1);
+        }
+        50% {
+          opacity: 0.8;
+          transform: scale(1.05);
+        }
+      }
+
+      @keyframes bounce {
+        0%,
+        20%,
+        50%,
+        80%,
+        100% {
+          transform: translateY(0);
+        }
+        40% {
+          transform: translateY(-10px);
+        }
+        60% {
+          transform: translateY(-5px);
+        }
       }
 
       .problems-grid {
@@ -307,7 +508,7 @@
       }
 
       .problem-card::before {
-        content: "💡";
+        content: '💡';
         position: absolute;
         bottom: 1.5rem;
         right: 1.5rem;
@@ -355,7 +556,7 @@
       }
 
       .service-card::before {
-        content: "";
+        content: '';
         position: absolute;
         top: 0;
         left: 0;
@@ -365,7 +566,7 @@
       }
 
       .service-card::after {
-        content: "";
+        content: '';
         display: none;
       }
 
@@ -394,7 +595,7 @@
       }
 
       .service-features li::before {
-        content: "✓";
+        content: '✓';
         position: absolute;
         left: 0;
         color: #667eea;
@@ -569,19 +770,14 @@
       <div class="hero-container">
         <div class="hero-content">
           <h1>Ivana Mitić</h1>
-          <p class="subtitle">
-            Agile Coach | Konsultant | Trener za razvoj ljudi i timova 🎯
-          </p>
-          <a href="#contact" class="cta-button"
-            >Zakažite uvodni razgovor
+          <p class="subtitle">Agile Coach | Konsultant | Trener za razvoj ljudi i timova 🎯</p>
+          <a href="#contact" class="cta-button">
+            Zakažite uvodni razgovor
             <span class="wave-emoji">👋</span>
           </a>
         </div>
         <div class="hero-image">
-          <img
-            src="./assets/ivana-mitic-cover-crop-faded.png"
-            alt="Ivana Mitić - Agile Coach"
-          />
+          <img src="./assets/ivana-mitic-cover-crop-faded.png" alt="Ivana Mitić - Agile Coach" />
         </div>
       </div>
     </header>
@@ -590,128 +786,172 @@
       <div class="container">
         <section class="section">
           <div class="why-section" id="about">
-            <h2 class="section-title">Zašto ovo treba vašoj firmi? 🤔</h2>
+            <h2 class="section-title">🧭 O meni</h2>
             <div class="why-content">
               <p>
-                Male IT firme rastu brzo, ali često bez strukture i jasne
-                kulture. Timovi su pod stresom, lideri nepripremljeni, a odlazak
-                ključnih ljudi postaje skupa realnost.
+                Zovem se Ivana Mitić i radim na preseku ljudskog potencijala, procesa i promene – kao Agile Lead, Change
+                Manager, Team & Leadership Coach i Change Catalyst.
               </p>
               <p>
-                <strong>Pomažem vam da to predupredite</strong> – uz
-                jednostavne, efikasne alate i radionice koje menjaju način na
-                koji ljudi rade i sarađuju.
+                Godinama sam bila deo transformacija u velikim, multinacionalnim sistemima – tamo gde je otpor promeni
+                snažan, a promene moraju da se dese brzo i precizno. Upravo to iskustvo donelo mi je veštinu da brzo
+                vidim suštinu, da vodim promene u složenim okruženjima i da prepoznam ono što većina ne uočava: da bez
+                rada sa ljudima – nema održive promene.
               </p>
-            </div>
-          </div>
-        </section>
-
-        <section class="section">
-          <h2 class="section-title">
-            Najčešći problemi sa kojima vam mogu pomoći
-          </h2>
-          <div class="problems-grid">
-            <div class="problem-card">
-              <h3>"Ljudi su dobri, ali ne funkcionišu kao tim"</h3>
               <p>
-                Individualni talenti ne znače automatski i timski uspeh.
-                Potrebna je sinhronizacija.
+                Danas svoju ekspertizu ulažem tamo gde je najpotrebnija – u male i srednje firme koje žele da rastu bez
+                gubitka autentičnosti. Radim sa liderima koji su hrabri da pogledaju realno stanje i žele da izgrade
+                kulturu koja podržava i rezultat i zadovoljstvo. Ne verujem u “silver bullet” rešenja. Verujem u
+                pažljivo vođene procese promene, u iskrenu komunikaciju i u to da svaki tim ima kapacitet da postane
+                najbolja verzija sebe – kada mu se za to da prostor.
               </p>
-            </div>
-            <div class="problem-card">
-              <h3>"Nemamo HR, ne znamo kako da razvijamo zaposlene"</h3>
               <p>
-                Bez sistemskog pristupa razvoju ljudi, gubite talent i
-                motivaciju.
-              </p>
-            </div>
-            <div class="problem-card">
-              <h3>"Lideri su tehnički jaki, ali ne znaju da vode timove"</h3>
-              <p>
-                Tehnička ekspertiza ne garantuje liderske veštine. Potreban je
-                razvoj.
-              </p>
-            </div>
-            <div class="problem-card">
-              <h3>"Komunikacija je loša, konflikti se guraju pod tepih"</h3>
-              <p>
-                Nereseni konflikti truju atmosferu i smanjuju produktivnost.
-              </p>
-            </div>
-            <div class="problem-card">
-              <h3>"Nemamo kulturu, samo zadatke"</h3>
-              <p>
-                Bez zajedničkih vrednosti i kulture, teško je zadržati ljude
-                dugoročno.
+                Radim direktno sa vlasnicima, direktorima, HR-om i timovima – u ulozi strateškog partnera, facilitatora
+                i pokretača stvarnih promena. Tamo gde su ljudi angažovani, lideri odgovorni, a procesi smisleni –
+                dolazi i rezultat.
               </p>
             </div>
           </div>
         </section>
 
         <section class="section" id="services">
-          <h2 class="section-title">Paketi usluga 📦</h2>
+          <h2 class="section-title">🎯 Usluge</h2>
           <div class="services-grid">
             <div class="service-card">
-              <h3>🔄 Timski Reset</h3>
+              <h3>🔍 Dijagnostika i razvoj organizacije</h3>
               <ul class="service-features">
-                <li>Dijagnostika timske klime i dinamike</li>
-                <li>Radionice za jačanje poverenja i komunikacije</li>
-                <li>Definisanje zajedničkih vrednosti</li>
-                <li>1:1 coaching za lidere i vlasnike</li>
-                <li>Plan implementacije promena</li>
+                <li>Procena zrelosti timova i procesa</li>
+                <li>Identifikacija uskih grla i blokatora rasta</li>
+                <li>Timske i organizacione mape sa konkretnim razvojnim koracima</li>
+                <li>360° feedback o stanju timske klime, liderstva i psihološke sigurnosti</li>
               </ul>
             </div>
             <div class="service-card">
-              <h3>🏗️ Osnove HR-a i Razvoja Ljudi</h3>
+              <h3>🔧 Postavljanje i unapređenje procesa</h3>
               <ul class="service-features">
-                <li>Onboarding šabloni i procesi</li>
-                <li>Struktura za 1:1 razgovore</li>
-                <li>Feedback alati i tehnike</li>
-                <li>Radionica: Psihološka sigurnost tima</li>
-                <li>Konsultacije o kulturi i vrednostima</li>
+                <li>Dizajn procesa koji podržavaju rast i kvalitetnu isporuku</li>
+                <li>Uvođenje ritma, fokusa i odgovornosti u svakodnevni rad</li>
+                <li>Konsultativna podrška u periodu tranzicije i rasta</li>
               </ul>
             </div>
             <div class="service-card">
-              <h3>👑 Lideri koji vode (ne samo izvršavaju)</h3>
+              <h3>🌱 Radionice & timski rad</h3>
               <ul class="service-features">
-                <li>Coaching program za tim lidere (4 sesije)</li>
-                <li>Trening: "Iz inženjera u lidera"</li>
-                <li>Komunikacija u izazovnim situacijama</li>
-                <li>Delegiranje i motivacija tima</li>
-                <li>Upravljanje performansama</li>
+                <li>Vođenje kroz promenu – kako voditi tim kroz neizvesnost i otpor</li>
+                <li>Psihološka sigurnost – dijagnostika + razvoj kroz facilitirane sesije</li>
+                <li>Kultura feedbacka – od izbegavanja do otvorenog dijaloga</li>
+                <li>Kreiranje zajedničkih vrednosti i pravila saradnje</li>
+                <li>Tim building s dubljom svrhom – nije “zabava”, već povezivanje</li>
+                <li>Razvoj lidera – iz operativaca u pokretače</li>
               </ul>
+            </div>
+            <div class="service-card">
+              <h3>📚 Learning & Development</h3>
+              <ul class="service-features">
+                <li>Razvojne L&D strategije za ljude koji zapravo žele da rastu</li>
+                <li>Strateška podrška HR-u u planiranju i sprovođenju razvoja zaposlenih</li>
+                <li>Coaching za timove i pojedince</li>
+                <li>Mentoring lidera u nastajanju i lidera u tranziciji</li>
+              </ul>
+            </div>
+            <div class="service-card">
+              <h3>🌀 Agilna transformacija i adaptacija</h3>
+              <ul class="service-features">
+                <li>Uvođenje agilnih principa tamo gde imaju smisla</li>
+                <li>Vođenje timova i lidera kroz promenu načina rada</li>
+                <li>Prilagođeni agilni alati i ritmovi (Scrum, Kanban, retrospektive, OKR-i itd.)</li>
+                <li>Facilitacija strateških sesija i transformacionih foruma</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section class="section">
+          <h2 class="section-title">💛 Moje vrednosti</h2>
+          <div class="problems-grid">
+            <div class="problem-card">
+              <h3>Autentičnost</h3>
+              <p>Verujem u ono što radim i ne radim ništa što ne verujem da vama koristi</p>
+            </div>
+            <div class="problem-card">
+              <h3>Zadovoljstvo i rezultat</h3>
+              <p>Jedno bez drugog nije održivo.</p>
+            </div>
+            <div class="problem-card">
+              <h3>Odgovornost</h3>
+              <p>Preuzimam, ne prebacujem. Isto učim i timove.</p>
+            </div>
+            <div class="problem-card">
+              <h3>Ljudskost</h3>
+              <p>Radim sa ljudima, ne u sistemima.</p>
+            </div>
+            <div class="problem-card">
+              <h3>Pristupačnost</h3>
+              <p>Možemo pričati otvoreno, bez eufemizama i sujete.</p>
+            </div>
+            <div class="problem-card">
+              <h3>Transformacija, ne intervencija – Ne gasim požare, postavljam temelje.</h3>
             </div>
           </div>
         </section>
 
         <section class="results-section" id="results">
-          <h2 class="section-title" style="color: white">
-            Rezultat saradnje sa mnom
-          </h2>
+          <h2 class="section-title" style="color: white">✨ Misija i vizija</h2>
           <div class="results-grid">
             <div class="result-item">
-              <h4>Zdravija timska kultura 🌱</h4>
-              <p>Atmosphere psihološke sigurnosti i uzajamnog poštovanja</p>
-            </div>
-            <div class="result-item">
-              <h4>Lideri koji znaju da vode 🎯</h4>
-              <p>Razvijene liderske veštine za efikasno upravljanje timovima</p>
-            </div>
-            <div class="result-item">
-              <h4>Zaposleni koji ostaju 💪</h4>
-              <p>Smanjenje fluktuacije kroz kontinuiran razvoj i engagement</p>
-            </div>
-            <div class="result-item">
-              <h4>Jasna struktura i bolja saradnja ⚡</h4>
+              <h4>Misija</h4>
               <p>
-                Definisani procesi i poboljšana komunikacija na svim nivoima
+                Moja misija je da pomognem firmama koje žele promenu, ali ne znaju kako da je sprovedu – da to urade
+                jasno, pažljivo i uz podršku. Da pomognem liderima da vode, a ne da iscrpljuju. Da pomognem ljudima da
+                se ne štite od posla, već da u njemu imaju smisao.
+              </p>
+            </div>
+            <div class="result-item">
+              <h4>Vizija</h4>
+              <p>
+                Svet rada u kojem mala i srednja preduzeća ne preživljavaju – već rastu stabilno, s jasnim procesima,
+                angažovanim ljudima i liderima koji znaju da je uspeh ono što ostaje i kad oni odu kući.
               </p>
             </div>
           </div>
         </section>
 
+        <section class="section" id="target-clients">
+          <div class="target-clients-section">
+            <h2 class="section-title">🤝 Za koga radim?</h2>
+            <div class="target-clients-grid">
+              <div class="target-client-card">
+                <div class="target-client-icon">🚀</div>
+                <h3>Preduzetnici i vlasnici</h3>
+                <p>koji žele da rastu ali ne znaju kako bez haosa</p>
+              </div>
+              <div class="target-client-card">
+                <div class="target-client-icon">🎯</div>
+                <h3>Direktori</h3>
+                <p>koji osećaju da im tim ne koristi svoj puni potencijal</p>
+              </div>
+              <div class="target-client-card">
+                <div class="target-client-icon">📈</div>
+                <h3>HR i L&D timovi</h3>
+                <p>koji nemaju vreme ni prostor da sami razvijaju strategije</p>
+              </div>
+              <div class="target-client-card">
+                <div class="target-client-icon">🏢</div>
+                <h3>Organizacije</h3>
+                <p>koje žele sistematizaciju i promenu kulture, ali ljudski i realno</p>
+              </div>
+              <div class="target-client-card">
+                <div class="target-client-icon">⭐</div>
+                <h3>Timovi</h3>
+                <p>koji znaju da mogu bolje – ali im treba podrška da se pokrenu</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
         <section id="contact" class="contact-section">
-          <h2 class="section-title">Kontaktirajte me za uvodni razgovor ☕</h2>
+          <h2 class="section-title">📩 Sledeći korak</h2>
+          <p>Ako osećaš da je vreme za sledeći nivo – možda je pravo vreme da pričamo. ✨</p>
           <div class="contact-grid">
             <div class="contact-item">
               <a href="mailto:imi.vuveks@gmail.com">
@@ -742,21 +982,21 @@
 
     <script>
       function toggleMenu() {
-        const hamburger = document.querySelector(".hamburger");
-        const mobileNav = document.querySelector(".nav-links.mobile");
+        const hamburger = document.querySelector('.hamburger');
+        const mobileNav = document.querySelector('.nav-links.mobile');
 
-        hamburger.classList.toggle("active");
-        mobileNav.classList.toggle("active");
+        hamburger.classList.toggle('active');
+        mobileNav.classList.toggle('active');
       }
 
       // Close mobile menu when clicking on a link
-      document.querySelectorAll(".nav-links.mobile a").forEach((link) => {
-        link.addEventListener("click", () => {
-          const hamburger = document.querySelector(".hamburger");
-          const mobileNav = document.querySelector(".nav-links.mobile");
+      document.querySelectorAll('.nav-links.mobile a').forEach((link) => {
+        link.addEventListener('click', () => {
+          const hamburger = document.querySelector('.hamburger');
+          const mobileNav = document.querySelector('.nav-links.mobile');
 
-          hamburger.classList.remove("active");
-          mobileNav.classList.remove("active");
+          hamburger.classList.remove('active');
+          mobileNav.classList.remove('active');
         });
       });
     </script>
